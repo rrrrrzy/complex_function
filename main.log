@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.18)  9 OCT 2024 23:15
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.18)  10 OCT 2024 00:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -547,21 +547,30 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 12.
  [1
 
-] (./main.aux)
+]
+LaTeX Font Info:    Font shape `TU/STSong(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/STSong(0)/m/it' tried instead on input line 72.
+ [2] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35318 strings out of 474773
- 970878 string characters out of 5757724
- 1925839 words of memory out of 5000000
- 57136 multiletter control sequences out of 15000+600000
- 560776 words of font info for 60 fonts, out of 8000000 for 9000
+ 34869 strings out of 474773
+ 959519 string characters out of 5757724
+ 1932839 words of memory out of 5000000
+ 56669 multiletter control sequences out of 15000+600000
+ 563584 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 117i,6n,121p,458b,814s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,6n,121p,458b,254s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (1 page).
+Output written on main.pdf (2 pages).

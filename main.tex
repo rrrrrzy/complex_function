@@ -7,19 +7,66 @@
 \author{rrrrrzy}
 \begin{document}
 \maketitle
-\section{NMOS and PMOS}
+\section{复数的基本运算}
+\subsection{复数的表示}
+先定义一个复数为$z = x + iy$, 在复平面上表示为(x, y), 当$z\neq 0$时, 
+称从正实轴到$z$的终边的角的弧度数$\theta$为$z$的辐角, 记作 $Argz=\theta $
+, 此时有$\tan (Argz) = \frac{y}{x}$, 因为一个不为零复数有无数个辐角, 
+如果$\theta_{1}$时其中的一个, 则$Argz=\theta_{1}+2k\pi(k\in N)$, 其中
+满足$-\pi<\theta_{0}\leq \pi$的角称为$Argz$的主值, 记作$\theta_{0}=\arg z$.
 
-NMOS and PMOS are two different type of MOS, 
-with N means negative and P means positive.
+我们规定, 当$z=0$时, 它的辐角不确定.
 
-They can be showed as two types below:
+此外, 一个复数还可以表示为$z=r(\cos\theta+i\sin\theta)$, 这就是复数的三角表示式.
+
+又由欧拉公式: $e^{i\theta}=\cos\theta+i\sin\theta$, 有: $z=re^{i\theta}$, 
+这就是复数的指数表示式.
+
+\subsection{复数的幂与根}
+n个相同复数$z$的乘积记作$z^{n}$, 有: $z^{n}=r^{n}(\cos n\theta+i\sin n\theta)$, 浅作证明如下:
+
+已知一个复数的指数表示式为$z=re^{i\theta}$, 则它的n次方为: $z^{n}=r^{n}e^{i\cdot n\theta}$, 认为$n\theta$
+是一个整体, 展开为三角表示式: $z^{n}=r^{n}(\cos n\theta+i\sin n\theta)$, 证毕.
+
+特别有, 当复数的模$r=1$时, 有De Moivre公式: $(\cos\theta+i\sin\theta)^{n}=\cos n\theta+i\sin n\theta$
+
+下面讨论复数的根:
+
+记复数的n次根为$w=\sqrt[n]{z}=r^{\frac{1}{n}}(\cos\frac{\theta+2k\pi}{n}+i\sin\frac{\theta+2k\pi}{n})$, 简作证明如下
+
+为了求出根$w$, 我们令
+
+\hspace{2em} $z=r(\cos\theta+i\sin\theta), w=\rho (\cos\varphi+i\sin\varphi)$
+
+由 De Moivre公式有 $\rho^{n}(\cos n\varphi+i\sin n\varphi)=r(\cos\theta+i\sin\theta) $
+
+于是有 $\rho^{n}=r, \cos n\varphi=\cos\theta, \sin n\varphi=\sin\varphi$, 显然, 后两式成立的充要条件是 
+$n\varphi=\theta+2k\pi, (k=0, \pm1, \pm2,...)$. 由此有, $\rho=r^{\frac{1}{n}}, \varphi=\frac{\theta+2k\pi}{n}$, 证毕
+
+\subsection{其他重要的基本性质}
+曲线光滑的定义: 
+
+\hspace{2em} 设曲线$z(t)=x(t)+iy(t)$可以表示为$z=z(t)$, 那么, 如果在区间$a\leq t \leq b$上, $x'(t), y'(t)$都是连续的, 且
+对$t$的每一个值都有$[x'(t)]^{2}+[y'(t)]^{2}\neq0$, 则称该曲线是光滑的.
+
+曲线简单和开闭的定义:
+
+\hspace{2em} 设一段曲线自身没有交叉点, 则称它为简单曲线. 如果起点与终点重合, 称它为简单闭曲线
+
+单联通域和多联通域的定义:
+
+\hspace{2em} 复平面上有一区域 B, 如果在其中任作一条简单闭合曲线, 曲线的内部总属于 B, 就称为单联通域. 一个区域
+如果不是单联通域, 就称为多联通域.
+\section{复变函数的基本操作}
+\subsection{复变函数的极限与导数}
+
+每个复变函数都可以表示为$f(z)=u(x)+v(x)\cdot i$, 则对它求极限有以下几种定理
+
+\textbf{定理一} \hspace{1em}设$f(z)=u(x,y)+iv(x,y), A=u_{0}+iv_{0}, z_{0}=x_{0}+iy_{0}$, 
+则$\lim_{x\to x_{0}}f(z)=A$的充要条件是
+
+\hspace{2em}$\lim_{(x,y)\to(x_{0},y_{0}) }u(x,y)=u_{0}$, $\lim_{(x,y)\to(x_{0},y_{0}) }v(x,y)=v_{0}$
 
 
 
-
-\begin{circuitikz}[scale=0.7, transform shape]
-    \draw (3,5.5) node[and port, anchor=out] (and1) {};
-    \draw (3.5,4) node[xnor port, anchor=out] (xor1) {};
-    \draw (3,2.5) node[and port, anchor=out] (and2) {};
-\end{circuitikz}
 \end{document}

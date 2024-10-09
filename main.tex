@@ -1,0 +1,25 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+%\usepackage[UTF8]{ctex}
+\usepackage{circuitikz}         %一个很好的电路绘制包体
+\ctikzset{logic ports=ieee}     %所有逻辑门使用IEEE标准
+\usetikzlibrary{calc}  
+\title{复变函数与积分变换}
+\author{rrrrrzy}
+\begin{document}
+\maketitle
+\section{NMOS and PMOS}
+
+NMOS and PMOS are two different type of MOS, 
+with N means negative and P means positive.
+
+They can be showed as two types below:
+
+
+
+
+\begin{circuitikz}[scale=0.7, transform shape]
+    \draw (3,5.5) node[and port, anchor=out] (and1) {};
+    \draw (3.5,4) node[xnor port, anchor=out] (xor1) {};
+    \draw (3,2.5) node[and port, anchor=out] (and2) {};
+\end{circuitikz}
+\end{document}

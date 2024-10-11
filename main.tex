@@ -59,7 +59,8 @@ n个相同复数$z$的乘积记作$z^{n}$, 有: $z^{n}=r^{n}(\cos n\theta+i\sin 
 由 De Moivre公式有 $\rho^{n}(\cos n\varphi+i\sin n\varphi)=r(\cos\theta+i\sin\theta) $
 
 于是有 $\rho^{n}=r,\; \cos n\varphi=\cos\theta,\; \sin n\varphi=\sin\varphi$, 显然, 后两式成立的充要条件是 
-$n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}, \;\varphi=\frac{\theta+2k\pi}{n}$, 证毕
+$n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}},
+ \;\varphi=\frac{\theta+2k\pi}{n}$, 证毕
     
 \end{proof}
 
@@ -143,7 +144,8 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
     -\frac{\partial v}{\partial x}.
 \]
 \end{theorem}
-特别强调, 复变函数$z=u+iv$在一点可导与可微是等价的, 而柯西-黎曼条件是说, 构成这个复变函数的实部和虚部的实函数要可微，并不是这个复变函数本身可微.
+特别强调, 复变函数$z=u+iv$在一点可导与可微是等价的, 而柯西-黎曼条件是说, 构成这个复变函数的实部和虚部的实函数要可微
+，并不是这个复变函数本身可微.
 
 立即的, 从柯西-黎曼方程可以推出函数$f(z)=u(x,y)+iv(x,y)$在点$z=x+iy$的导数公式:
 \[
@@ -262,5 +264,29 @@ F(z)=\int_{z_0}^{z}f(\zeta)\,d\zeta.
     这里的$z_0,z_1$为域$B$内的两点.
 \end{theorem}
 \subsection{柯西积分公式}
-
+设有一函数$f(z)$在$B$内解析, $z_0$是$B$内一点, 显然$\frac{f(z)}{z-z_0}$在
+$z_0$不解析, 那么积分$\oint_{C}\frac{f(z)}{z-z_0}\,dz$一般不为零, 由闭路变形原理知, 
+该积分的值沿任何一条围绕$z_0$的闭合曲线都是相同的, 不妨从以$z_0$为圆心的圆去逼近它,即$z\to z_0$, 最终有
+\[
+\oint_{C}\frac{f(z)}{z-z_0}\,dz=\oint_{C}\frac{f(z_0)}{z-z_0}\,dz=f(z_0)\oint_{C}\frac{dz}{(z-z_0)^1}=2\pi if(z_0)
+\]
+这样就得到了下面的定理
+\begin{theorem}[柯西积分公式]
+    如果$f(z)$在区域$D$内处处解析, $C$为$D$内的任何一条正向简单闭曲线, 它的内部完全包含于$D$, $z_0$为$C$内的任一点, 那么有
+    \[
+        f(z_0)=\frac{1}{2\pi i}\oint_{C}\frac{f(z)}{z-z_0}\,dz
+    \]
+\end{theorem}
+这个公式可以把函数在$C$内任一点的值用它在边界上的值来表示. 换句话说, 如果$f(z)$在区域边界上的值一经确定, 那么它在区域内部
+任一点的值也就确定了, 这是解析函数的又一特征
+\subsection{解析函数的高阶导数}
+一个解析函数不仅有一阶导数, 而且还有高阶导数, 它的值也可以用函数在边界上的值通过积分来表示, 我们有以下定理
+\begin{theorem}
+    解析函数$f(z)$的导数仍为解析函数, 它的$n$阶导数为:
+    \[
+        f^{(n)}(z_0)=\frac{n!}{2\pi i}\oint_{C}\frac{f(z)}{(z-z_0)^{(n+1)}}\,dz \quad (n=1,2,...)
+    \]
+    其中$C$为在函数$f(z)$的解析区域$D$内围绕$z_0$的任何一条正向简单闭曲线, 而且它的内部全包含于$D$
+\end{theorem}
+高阶导数公式的作用不在于通过积分来求导, 而是在于通过求导来求积分
 \end{document}

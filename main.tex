@@ -21,11 +21,11 @@
 \maketitle
 \section{复数的基本运算}
 \subsection{复数的表示}
-先定义一个复数为$z = x + iy$, 在复平面上表示为(x, y), 当$z\neq 0$时, 
-称从正实轴到$z$的终边的角的弧度数$\theta$为$z$的辐角, 记作 $Argz=\theta $
-, 此时有$\tan (Argz) = \frac{y}{x}$, 因为一个不为零复数有无数个辐角, 
-如果$\theta_{1}$时其中的一个, 则$Argz=\theta_{1}+2k\pi(k\in N)$, 其中
-满足$-\pi<\theta_{0}\leq \pi$的角称为$Argz$的主值, 记作$\theta_{0}=\arg z$.
+先定义一个复数为$z = x + iy$, 记它的实部为$\Re(z)=x$, 虚部为$\Im(z)=y$, 在复平面上表示为(x, y), 当$z\neq 0$时, 
+称从正实轴到$z$的终边的角的弧度数$\theta$为$z$的辐角, 记作 $\text{\text{Arg}z}=\theta $
+, 此时有$\tan (\text{Arg}z) = \frac{y}{x}$, 因为一个不为零复数有无数个辐角, 
+如果$\theta_{1}$时其中的一个, 则$\text{Arg}z=\theta_{1}+2k\pi(k\in N)$, 其中
+满足$-\pi<\theta_{0}\leq \pi$的角称为$\text{Arg}z$的主值, 记作$\theta_{0}=\arg z$.
 
 我们规定, 当$z=0$时, 它的辐角不确定.
 
@@ -158,6 +158,62 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
 \end{theorem}
 \subsection{几个特殊的复变函数}
 \subsubsection{指数函数}
+\begin{definition}[复变函数指数的定义]
+    函数$f(z)=e^x(\cos y+i\sin y)$是一个在复平面内处处解析的函数, 且有$f'(z)=f(z)$, 当$\Im(z)=y=0$时, $f(z)=e^x$, 
+    这个函数满足复变函数指数的定义, 记作$\exp z=e^x(\cos y+i\sin y)$, 称其为复变函数$z$的指数函数.
+\end{definition}
+\noindent 该定义等价于关系式:
+\begin{align*}
+    &\left\lvert \exp z\right\rvert =e^z\\
+    &\text{Arg}(\exp z)=y+2k\pi, \quad\text{其中, $k$为任何整数, }
+\end{align*}
+\noindent 显然$\exp z$也服从加法定理:$\exp z_1\cdot\exp z_2=\exp (z_1+z_2)$
+
+方便起见, 通常用$e^z$代替$\exp z$, 但这里的$e^z$没有幂的意义, 仅作为代替符号使用, 故有
+\[
+e^{z}=e^x(\cos y+i\sin y).
+\]
+那么由加法定理可以推出$\exp z$的周期为$2k\pi i$, 即
+\[
+e^{z+2k\pi i} = e^z\cdot e^{2k\pi i}=e^z, \quad \text{其中$k$为任何整数}
+\]
+这个性质只有复变函数中才存在
+
+\subsubsection{对数函数}
+\begin{definition}[对数函数的定义]
+和实变函数一样, 对数函数定义为指数函数的反函数. 我们把满足方程$e^\omega = z,\;(z\neq0)$的函数
+$\omega=f(z)$称为对数函数
+\end{definition}
+令$\omega=u+iv,z=re^{i\theta}$, 那么$e^{u+iv}=re^{i\theta}$, 因此有
+\[
+\omega=\ln \left\lvert z\right\rvert +i\text{Arg}z.
+\]
+
+由于Arg$z$是多值函数, 所以对数函数$\omega=f(z)$是多值函数, 并且每两个值相差$2\pi i$的整数倍, 记作
+\[
+\text{Ln}z=\ln\left\lvert z\right\rvert +i\text{Arg}z.
+\]
+如果规定上式中的Arg$z$取主值$\arg z$, 则Ln$z$为一单值函数, 记为$\ln z$, 称作Ln$z$的主值. 因此就有
+\[
+\ln z= \ln \left\lvert z\right\rvert + i\arg z
+\]
+其余各值可以由Ln$z=\ln z+2k\pi i \quad(k=\pm1,\pm2,...)$表达
+
+利用辐角的相应性质不难证明, 复变对数函数保持了实变对数函数的基本性质:
+\begin{align*}
+    \text{Ln}(z_1z_2) &= \text{Ln}z_1+\text{Ln}z_2,\\
+    \text{Ln}\frac{z_1}{z_2} &= \text{Ln}z_1-\text{Ln}z_2
+\end{align*}
+   但需要注意的是, 下面的式子不再成立
+\begin{align*}
+    \text{Ln}z^n &= n\text{Ln}z,\\
+    \text{Ln}\sqrt[n]{z} &= \frac{1}{n}\text{Ln}z
+\end{align*}
+也很容易证明, $\ln z$在除去原点及负实轴的平面内解析, Ln$z$的各个分支在除去
+原点及负实轴的平面内也解析, 并且有相同的导数值
+
+\subsubsection{乘幂$a^b$与幂函数}
+
 \section{复变函数的积分}
 \subsection{积分存在的条件及其计算方法}
 \subsubsection{积分存在的条件}

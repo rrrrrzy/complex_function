@@ -3,6 +3,13 @@
 \usepackage{circuitikz}         %一个很好的电路绘制包体
 \ctikzset{logic ports=ieee}     %所有逻辑门使用IEEE标准
 \usetikzlibrary{calc}  
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{nature}{性质}
+
 \title{复变函数与积分变换}
 \author{rrrrrzy}
 \begin{document}
@@ -25,48 +32,120 @@
 \subsection{复数的幂与根}
 n个相同复数$z$的乘积记作$z^{n}$, 有: $z^{n}=r^{n}(\cos n\theta+i\sin n\theta)$, 浅作证明如下:
 
+\begin{proof}
 已知一个复数的指数表示式为$z=re^{i\theta}$, 则它的n次方为: $z^{n}=r^{n}e^{i\cdot n\theta}$, 认为$n\theta$
-是一个整体, 展开为三角表示式: $z^{n}=r^{n}(\cos n\theta+i\sin n\theta)$, 证毕.
+是一个整体, 展开为三角表示式: $z^{n}=r^{n}(\cos n\theta+i\sin n\theta)$
 
-特别有, 当复数的模$r=1$时, 有De Moivre公式: $(\cos\theta+i\sin\theta)^{n}=\cos n\theta+i\sin n\theta$
+\end{proof}
+
+特别的, 当复数的模$r=1$时, 有De Moivre公式: 
+\[
+    (\cos\theta+i\sin\theta)^{n}=\cos n\theta+i\sin n\theta
+\]
 
 下面讨论复数的根:
 
 记复数的n次根为$w=\sqrt[n]{z}=r^{\frac{1}{n}}(\cos\frac{\theta+2k\pi}{n}+i\sin\frac{\theta+2k\pi}{n})$, 简作证明如下
-
+\begin{proof}
 为了求出根$w$, 我们令
-
-\hspace{2em} $z=r(\cos\theta+i\sin\theta), w=\rho (\cos\varphi+i\sin\varphi)$
-
+\[
+    z=r(\cos\theta+i\sin\theta),\; w=\rho (\cos\varphi+i\sin\varphi)
+\]
 由 De Moivre公式有 $\rho^{n}(\cos n\varphi+i\sin n\varphi)=r(\cos\theta+i\sin\theta) $
 
-于是有 $\rho^{n}=r, \cos n\varphi=\cos\theta, \sin n\varphi=\sin\varphi$, 显然, 后两式成立的充要条件是 
-$n\varphi=\theta+2k\pi, (k=0, \pm1, \pm2,...)$. 由此有, $\rho=r^{\frac{1}{n}}, \varphi=\frac{\theta+2k\pi}{n}$, 证毕
+于是有 $\rho^{n}=r,\; \cos n\varphi=\cos\theta,\; \sin n\varphi=\sin\varphi$, 显然, 后两式成立的充要条件是 
+$n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}, \;\varphi=\frac{\theta+2k\pi}{n}$, 证毕
+    
+\end{proof}
 
-\subsection{其他重要的基本性质}
-曲线光滑的定义: 
+\subsection{其他重要的定义}
+\begin{definition}[曲线光滑的定义]
 
-\hspace{2em} 设曲线$z(t)=x(t)+iy(t)$可以表示为$z=z(t)$, 那么, 如果在区间$a\leq t \leq b$上, $x'(t), y'(t)$都是连续的, 且
+    设曲线$z(t)=x(t)+iy(t)$可以表示为$z=z(t)$, 那么, 如果在区间$a\leq t \leq b$上, $x'(t), y'(t)$都是连续的, 且
 对$t$的每一个值都有$[x'(t)]^{2}+[y'(t)]^{2}\neq0$, 则称该曲线是光滑的.
+\end{definition}
 
-曲线简单和开闭的定义:
 
-\hspace{2em} 设一段曲线自身没有交叉点, 则称它为简单曲线. 如果起点与终点重合, 称它为简单闭曲线
+\begin{definition}[曲线简单和开闭的定义]
+    设一段曲线自身没有交叉点, 则称它为简单曲线. 如果起点与终点重合, 称它为简单闭曲线
+\end{definition}
 
-单联通域和多联通域的定义:
-
-\hspace{2em} 复平面上有一区域 B, 如果在其中任作一条简单闭合曲线, 曲线的内部总属于 B, 就称为单联通域. 一个区域
+\begin{definition}[单联通域和多联通域的定义]
+    复平面上有一区域 B, 如果在其中任作一条简单闭合曲线, 曲线的内部总属于 B, 就称为单联通域. 一个区域
 如果不是单联通域, 就称为多联通域.
+\end{definition}
+
 \section{复变函数的基本操作}
-\subsection{复变函数的极限与导数}
+\subsection{复变函数的极限}
 
 每个复变函数都可以表示为$f(z)=u(x)+v(x)\cdot i$, 则对它求极限有以下几种定理
 
-\textbf{定理一} \hspace{1em}设$f(z)=u(x,y)+iv(x,y), A=u_{0}+iv_{0}, z_{0}=x_{0}+iy_{0}$, 
-则$\lim_{x\to x_{0}}f(z)=A$的充要条件是
+\begin{theorem}[定理一]
+    设$f(z)=u(x,y)+iv(x,y),\; A=u_{0}+iv_{0},\; z_{0}=x_{0}+iy_{0}$, 则$\lim_{z\to z_{0}}f(z)=A$的充要条件
+    是
+    \[
+        \lim_{ (x,y)\to(x_{0},y_{0}) } u(x,y)=u_{0} \quad \lim_{(x,y)\to(x_{0},y_{0}) }v(x,y)=v_{0}
+    \]
+\end{theorem}
 
-\hspace{2em}$\lim_{(x,y)\to(x_{0},y_{0}) }u(x,y)=u_{0}$, $\lim_{(x,y)\to(x_{0},y_{0}) }v(x,y)=v_{0}$
+这个定理把求一个复变函数的极限问题转化为了求两个二元实变函数的极限问题.
 
+与此相同, 实变函数中的极限基本运算规律在复变函数中也是适用的
+\begin{theorem}[定理二]
+    如果$\lim_{z\to z_{0}}f(z)=A,\;\lim_{z\to z_{0}}g(z)=B$, 则有
+    \begin{align}
+        \lim_{z\to z_{0}} [f(z)\pm g(z)] = A \pm B; \\
+        \lim_{z\to z_{0}} f(z)g(z)=AB;\\
+        \lim_{z\to z_{0}} \frac{f(z)}{g(z)}=\frac{A}{B} \quad (B\neq0)
+    \end{align}   
 
+\end{theorem}
+\subsection{复变函数的导数}
+
+\subsubsection{复变函数导数的定义}
+\begin{definition}[复变函数可导的定义]
+    设函数$\omega=f(z)$定义于区域$D$.$z_{0}$是$S$中一点, 点$z_{0}+\Delta z$不出$D$的范围. 如果极限
+    $\lim_{\Delta z\to0}\frac{f(z_{0}+\Delta z)-f(z_{0})}{\Delta z}$存在, 那么就称$f(z)$在$Dz_{0}$
+    可导.这个极限值就称作$f(z)$在$z_{0}$的导数, 记作$f'(z_{0})$
+\end{definition}
+
+可见, 复变函数导数的定义和一元实变函数的定义类似, 只是$\Delta z\to 0$的方式是任意的, 不再局限于数轴上的双向趋近. 
+因此, 导数也就没有了左导数和右导数之说, 这一点又和二元实变函数的导数类似.
+
+\subsubsection{复变函数的连续性}
+与实变函数相同, 复变函数\textbf{可导一定连续, 连续不一定可导}
+
+\subsubsection{复变函数的求导法则}
+与一元实变函数的求导公式在形式上完全一致
+
+\subsubsection{复变函数的微分}
+与一元实变函数的微分概念完全一致, 需要特别指出的是:函数$\omega=f(z)$在$z_{0}$处可导与在$z_{0}$处可微是等价的
+
+\subsection{解析函数}
+\subsubsection{解析函数的定义}
+\begin{definition}
+    如果函数$f(z)$在$z_{0}$及$z_{0}$的邻域内处处可导, 那么称$f(z)$在$z_{0}$解析.如果$f(z)$在区域$D$内每一点
+    解析, 那么称$f(z)$在$D$内解析, 或称$f(z)$是$D$内的一个解析函数(全纯函数或正则函数).\\
+    如果$f(z)$在$z_{0}$上不解析, 那么称$z_{0}$为$f(z)$的奇点.
+\end{definition}
+由此可见, 函数在区域内解析和在区域内可导是等价的, 但函数在一点处可导, 不一定在该点处解析
+\subsubsection{函数解析的充要条件}
+\begin{theorem}[函数可导的充要条件]
+设函数$f(z)=u(x,y)+iv(x,y)$定义在区域$D$内, 则$f(z)$在$D$内一点$z=x+iy$可导的充要条件是:$u(x,y)$与$v(x,y)$在
+点$(x,y)$可微, 并且在该点满足柯西-黎曼方程
+\[
+    \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}, \quad\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}.
+\]
+\end{theorem}
+特别强调, 复变函数$z=u+iv$在一点可导与可微是等价的, 而柯西-黎曼条件是说, 构成这个复变函数的实部和虚部的实函数要可微，并不是这个复变函数本身可微.
+
+立即的, 从柯西-黎曼方程可以推出函数$f(z)=u(x,y)+iv(x,y)$在点$z=x+iy$的导数公式:
+\[
+    f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{1}{i}\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}
+\]
+根据函数解析的定义及定理2.3, 得到以下定理
+\begin{theorem}[函数在区域$D$解析的充要条件]
+    函数$f(z)=u(x,y)+iv(x,y)$在定义域$D$内解析的充要条件是:$u(x,y)$与$v(x,y)$在$D$内可微, 并且满足柯西-黎曼方程
+\end{theorem}
 
 \end{document}

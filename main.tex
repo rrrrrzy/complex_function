@@ -100,9 +100,9 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
 \begin{theorem}[定理二]
     如果$\lim_{z\to z_{0}}f(z)=A,\;\lim_{z\to z_{0}}g(z)=B$, 则有
     \begin{align}
-        \lim_{z\to z_{0}} [f(z)\pm g(z)] = A \pm B; \\
-        \lim_{z\to z_{0}} f(z)g(z)=AB;\\
-        \lim_{z\to z_{0}} \frac{f(z)}{g(z)}=\frac{A}{B} \quad (B\neq0)
+        \lim_{z\to z_{0}} [f(z)\pm g(z)] &= A \pm B; \\
+        \lim_{z\to z_{0}} f(z)g(z) &= AB;\\
+        \lim_{z\to z_{0}} \frac{f(z)}{g(z)} &= \frac{A}{B} \quad (B\neq0)
     \end{align}   
 
 \end{theorem}
@@ -165,8 +165,8 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
 \subsubsection{积分的几个基本计算法}
 对于普通的线积分:
 \begin{align*}
-    \int_{C}f(z)\,dz=\int_{C}(u+iv)\,(dx+idy)=\int_{C}u\,dx+iv\,dx+iu\,dy-v\,dy \\
-    =\int_{C}u\,dx-v\,dy+i\int_{C}v\,dx+\,udy
+    \int_{C}f(z)\,dz=\int_{C}(u+iv)\,(dx+idy) &= \int_{C}u\,dx+iv\,dx+iu\,dy-v\,dy \\
+    &= \int_{C}u\,dx-v\,dy+i\int_{C}v\,dx+\,udy
 \end{align*}
 
 对于可以化为参数方程$z=z(t),\,\alpha\leq t\leq\beta$的积分:
@@ -200,13 +200,13 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
 \subsection{柯西-古萨基本定理}
 从对普通线积分的计算可以发现, 一个复变函数的积分被转化为了两个二元实变函数的第二类曲线积分, 要计算它们可以使用格林公式:
 \begin{align*}
-    \int_{C}u\,dx-v\,dy =\iint_{D}(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y})\,dxdy \\
-    \int_{C}v\,dx+\,udy=\iint_{D}(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y})\,dxdy
+    \int_{C}u\,dx-v\,dy &= \iint_{D}(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y})\,dxdy \\
+    \int_{C}v\,dx+\,udy &= \iint_{D}(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y})\,dxdy
 \end{align*}
 由定理2.3得到的导数公式知:
 \begin{align*}
-\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\\
-\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}
+\frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
+\frac{\partial v}{\partial x} &= -\frac{\partial u}{\partial y}
 \end{align*}
 这刚好满足积分与路径无关的充要条件:
 \[
@@ -279,6 +279,14 @@ $z_0$不解析, 那么积分$\oint_{C}\frac{f(z)}{z-z_0}\,dz$一般不为零, �
 \end{theorem}
 这个公式可以把函数在$C$内任一点的值用它在边界上的值来表示. 换句话说, 如果$f(z)$在区域边界上的值一经确定, 那么它在区域内部
 任一点的值也就确定了, 这是解析函数的又一特征
+
+如果$C$是圆周$z=z_0+Re^{i\theta}$, 那么上式就可以写作
+\begin{align*}
+f(z_0) &= \frac{1}{2\pi i}\int_{0}^{2\pi}\frac{f(z_0+Re^{i\theta})}{Re^{i\theta}}\,d(z_0+Re^{i\theta})\\
+&= \frac{1}{2\pi}\int_{0}^{2\pi}f(z_0+Re^{i\theta})\,d\theta
+\end{align*}
+\noindent 也就是说, \textbf{一个解析函数在圆心处的值等于它在圆周上的平均值}
+
 \subsection{解析函数的高阶导数}
 一个解析函数不仅有一阶导数, 而且还有高阶导数, 它的值也可以用函数在边界上的值通过积分来表示, 我们有以下定理
 \begin{theorem}

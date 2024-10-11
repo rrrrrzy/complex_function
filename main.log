@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.18)  11 OCT 2024 15:52
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.18)  11 OCT 2024 20:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -627,24 +627,19 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 ]
 LaTeX Font Info:    Font shape `TU/STSong(0)/m/sl' in size <12> not available
 (Font)              Font shape `TU/STSong(0)/m/it' tried instead on input line 93.
- [2] [3] [4]
-Overfull \hbox (85.7192pt too wide) detected at line 166
-[][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 z\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 dz \OT1/cmr/m/n/12 = [][](\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 iv\OT1/cmr/m/n/12 ) (\OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 idy\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 u dx \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 iv dx \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 iu dy \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 v dy[]  \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 u dx \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 vdy \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 i [][] vdx \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 udy
- []
-
-[5] [6] (./main.aux)
+ [2] [3] [4] [5] [6] [7] [8] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 35715 strings out of 474773
- 971260 string characters out of 5757724
+ 35738 strings out of 474773
+ 972670 string characters out of 5757724
  1935839 words of memory out of 5000000
- 57491 multiletter control sequences out of 15000+600000
+ 57514 multiletter control sequences out of 15000+600000
  564717 words of font info for 84 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,9n,121p,458b,321s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (6 pages).
+Output written on main.pdf (8 pages).

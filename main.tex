@@ -136,17 +136,19 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
 由此可见, 函数在区域内解析和在区域内可导是等价的, 但函数在一点处可导, 不一定在该点处解析
 \subsubsection{函数解析的充要条件}
 \begin{theorem}[函数可导的充要条件]
-设函数$f(z)=u(x,y)+iv(x,y)$定义在区域$D$内, 则$f(z)$在$D$内一点$z=x+iy$可导的充要条件是:$u(x,y)$与$v(x,y)$在
+设函数$f(z)=u(x,y)+iv(x,y)$定义在区域$D$内, 则$f(z)$在$D$内一点$z=x+iy$可导的充要条件是$u(x,y)$与$v(x,y)$在
 点$(x,y)$可微, 并且在该点满足柯西-黎曼方程
 \[
-    \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}, \quad\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}.
+    \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}, \quad\frac{\partial u}{\partial y}=
+    -\frac{\partial v}{\partial x}.
 \]
 \end{theorem}
 特别强调, 复变函数$z=u+iv$在一点可导与可微是等价的, 而柯西-黎曼条件是说, 构成这个复变函数的实部和虚部的实函数要可微，并不是这个复变函数本身可微.
 
 立即的, 从柯西-黎曼方程可以推出函数$f(z)=u(x,y)+iv(x,y)$在点$z=x+iy$的导数公式:
 \[
-    f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{1}{i}\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}
+    f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=
+    \frac{1}{i}\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}
 \]
 根据函数解析的定义及定理2.3, 得到以下定理
 \begin{theorem}[函数在区域$D$解析的充要条件]
@@ -160,10 +162,10 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
 当$f(z)$是连续函数而$C$是光滑曲线时, 积分$\int_{C}f(z)  \,dz $是一定存在的
 \subsubsection{积分的几个基本计算法}
 对于普通的线积分:
-\[
-    \int_{C}f(z)\,dz=\int_{C}(u+iv)\,(dx+idy)=\int_{C}u\,dx+iv\,dx+iu\,dy-v\,dy\\
-    =\int_{C}u\,dx-vdy+i\int_{C}vdx+udy
-\]
+\begin{align*}
+    \int_{C}f(z)\,dz=\int_{C}(u+iv)\,(dx+idy)=\int_{C}u\,dx+iv\,dx+iu\,dy-v\,dy \\
+    =\int_{C}u\,dx-v\,dy+i\int_{C}v\,dx+\,udy
+\end{align*}
 
 对于可以化为参数方程$z=z(t),\,\alpha\leq t\leq\beta$的积分:
 \[
@@ -192,7 +194,73 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
             0, &n\neq 0
         \end{cases}
     \]
-    其中, $C$只要是包围$z_{0}$的正向简单曲线即可
+    其中, $C$只要是包围$z_{0}$的正向简单曲线即可, 它的特点是积分与路线中心和周围半径无关
 \subsection{柯西-古萨基本定理}
+从对普通线积分的计算可以发现, 一个复变函数的积分被转化为了两个二元实变函数的第二类曲线积分, 要计算它们可以使用格林公式:
+\begin{align*}
+    \int_{C}u\,dx-v\,dy =\iint_{D}(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y})\,dxdy \\
+    \int_{C}v\,dx+\,udy=\iint_{D}(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y})\,dxdy
+\end{align*}
+由定理2.3得到的导数公式知:
+\begin{align*}
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\\
+\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}
+\end{align*}
+这刚好满足积分与路径无关的充要条件:
+\[
+    \frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}
+\]
+因此, 得到柯西-古萨定理
+\begin{theorem}[柯西-古萨定理]
+    如果函数$f(z)$在单联通域$B$内处处解析, 那么函数$f(z)$沿$B$内的任何一条封闭曲线$C$的积分为零:
+    \[
+    \oint_{C}f(z)\,dz=0
+    \]
+\end{theorem}
+定理中的$C$可以不是简单曲线, 而定理成立的条件之一就是曲线$C$要属于区域$B$. 另外, 如果$C$是区域$B$的边界,
+$f(z)$在$B$内解析, 在闭区域$\bar{B}$上连续, 定理仍然成立
+
+\subsection{基本定理的推广——复合闭路定理}
+如果曲线$C$的内部不完全包含于$D$时, 柯西-古萨定理不一定成立, 这里给出复合闭路定理
+\begin{theorem}[复合闭路定理]
+    \hspace{0em}
+    
+    设$C$是多联通域$D$内的一条简单闭曲线, $C_1,C_2,...,C_n$是在$C$内部的简单闭曲线, 它们互不包含也互不相交, 
+并且以$C_1,C_2,...,C_n$为边界的区域全含于$D$, 如果$f(z)$在$D$内解析, 那么: 
+
+$\oint_{C}f(z)\,dz=\sum_{k=1}^{n}\oint_{C_k}f(z)\,dz$, 其中$C$和$C_k$均取正方向; 
+
+$\oint_{\Gamma}f(z)\,dz=0$, 这里$\Gamma$为由$C$及$C_k(k=1,2,...,n)$所组成的复合闭路
+(其方向是:$C$按逆时针,$C_k^n$按顺时针)
+
+\end{theorem}
+\subsection{原函数与不定积分}
+我们知道, 线积分沿封闭曲线的积分为零跟曲线积分与路径无关是两个等价的概念, 因此从柯西-古萨定理有:
+\begin{theorem}
+    如果函数$f(z)$在单联通域$B$内处处解析, 那么积分$\int_Cf(z)\,dz$与连接起点和终点的路线$C$无关
+\end{theorem}
+从定理3.3有, 解析函数在单联通域内的积分只和起点$z_0$及终点$z_1$有关, 因此有
+\[
+\int_{C_1}f(z)\,dz=\int_{C_2}f(z)\,dz=\int_{z_0}^{z_1}f(z)\,dz
+\]
+固定$z_0$, 让$z_1$在$B$内变动, 并令$z=z_1$, 则变上限积分$\int_{z_0}^{z}f(\zeta)\,d\zeta$在
+$B$内确定了一个单值函数$F(z)$, 即
+\[
+F(z)=\int_{z_0}^{z}f(\zeta)\,d\zeta.
+\]
+对这个函数, 我们有
+\begin{theorem}
+    如果$f(z)$在单联通域$B$内处处解析, 那么函数$F(z)$必为$B$内的一个解析函数, 并且$F'(z)=f(z)$
+\end{theorem}
+\noindent 这个定理与一元实变函数的变上限积分的求导定理是完全类似的, 因此也能类似地引入积分基本定理和
+牛顿-莱布尼兹公式.
+\begin{theorem}
+    如果$f(z)$在单联通域$B$内处处解析, $G(z)$为$f(z)$的一个原函数, 那么
+    \[
+        \int_{z_0}^{z_1}f(z)\,dz=G(z_1)-G(z_0),
+    \]
+    这里的$z_0,z_1$为域$B$内的两点.
+\end{theorem}
+\subsection{柯西积分公式}
 
 \end{document}

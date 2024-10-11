@@ -6,9 +6,14 @@
 
 \usepackage{amsmath}
 \usepackage{amsthm}
+\theoremstyle{plain}
 \newtheorem{theorem}{定理}[section]
 \newtheorem{definition}{定义}[section]
 \newtheorem{nature}{性质}
+\theoremstyle{definition}
+\newtheorem{example}{例}
+\theoremstyle{definition}
+\newtheorem*{solution}{解}
 
 \title{复变函数与积分变换}
 \author{rrrrrzy}
@@ -147,5 +152,47 @@ $n\varphi=\theta+2k\pi,\; (k=0, \pm1, \pm2,...)$. 由此有$\rho=r^{\frac{1}{n}}
 \begin{theorem}[函数在区域$D$解析的充要条件]
     函数$f(z)=u(x,y)+iv(x,y)$在定义域$D$内解析的充要条件是:$u(x,y)$与$v(x,y)$在$D$内可微, 并且满足柯西-黎曼方程
 \end{theorem}
+\subsection{几个特殊的复变函数}
+\subsubsection{指数函数}
+\section{复变函数的积分}
+\subsection{积分存在的条件及其计算方法}
+\subsubsection{积分存在的条件}
+当$f(z)$是连续函数而$C$是光滑曲线时, 积分$\int_{C}f(z)  \,dz $是一定存在的
+\subsubsection{积分的几个基本计算法}
+对于普通的线积分:
+\[
+    \int_{C}f(z)\,dz=\int_{C}(u+iv)\,(dx+idy)=\int_{C}u\,dx+iv\,dx+iu\,dy-v\,dy\\
+    =\int_{C}u\,dx-vdy+i\int_{C}vdx+udy
+\]
+
+对于可以化为参数方程$z=z(t),\,\alpha\leq t\leq\beta$的积分:
+\[
+    \int_{C}f(z)\,dz=\int_{\alpha}^{\beta}f[z(t)]z'(t)\,dt
+\]
+\subsubsection{一个常用的积分}
+\begin{example}
+    计算$\oint_{C}\frac{dz}{(z-z_{0})^{n+1}}$, 其中$C$为以$z_{0}$为中心, $r$为半径的正向圆周, $n$为整数
+\end{example}
+\begin{solution}
+    $C$的方程可以写作$z=z_{0}+re^{i\theta},0\leq\theta\leq2\pi$, 所以
+    \[
+        \oint_{C}\frac{dz}{(z-z_{0})^{n+1}}=\int_{0}^{2\pi}\frac{ire^{i\theta}}{r^{n+1}e^{(n+1)i\theta}}\,d\theta
+        =\int_{0}^{2\pi}\frac{i}{r^{n}e^{in\theta}}\,d\theta=\frac{i}{r^{n}}\int_{0}^{2\pi}e^{-in\theta}\,d\theta
+    \]
+
+    则当$n=0$时, 结果为: $i\int_{0}^{2\pi}\,d\theta=2\pi i$,
+
+    当$n\neq0$时, 结果为: $\frac{i}{r^{n}}\int_{0}^{2\pi}(\cos n\theta-i\sin n\theta)\,d\theta=0$.
+\end{solution}
+    \noindent 因此得到: 
+    \[
+        \oint_{C}\frac{dz}{(z-z_{0})^{n+1}}=
+        \begin{cases}
+            2\pi i, & n=0\\
+            0, &n\neq 0
+        \end{cases}
+    \]
+    其中, $C$只要是包围$z_{0}$的正向简单曲线即可
+\subsection{柯西-古萨基本定理}
 
 \end{document}

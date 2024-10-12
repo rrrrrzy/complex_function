@@ -353,4 +353,26 @@ f(z_0) &= \frac{1}{2\pi i}\int_{0}^{2\pi}\frac{f(z_0+Re^{i\theta})}{Re^{i\theta}
     其中$C$为在函数$f(z)$的解析区域$D$内围绕$z_0$的任何一条正向简单闭曲线, 而且它的内部全包含于$D$
 \end{theorem}
 高阶导数公式的作用不在于通过积分来求导, 而是在于通过求导来求积分
+
+\subsection{解析函数与调和函数的关系}
+\begin{definition}
+    如果二元实变函数$\varphi(x,y)$在区域$D$内有二阶连续偏导数, 并且满足
+    拉普拉斯(Laplace)方程
+    \[
+    \frac{\partial^2\varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y}=0
+    \]
+    则称$\varphi(x,y)$是区域$D$内的调和函数
+\end{definition}
+\begin{theorem}
+    任何在区域$D$内解析的函数, 它的实部和虚部都是$D$内的调和函数
+\end{theorem}
+这个定理说明了调和函数和解析函数的关系
+\begin{definition}
+    设$u=(x,y)$是区域$D$内给定的调和函数, 我们把使$u+iv$在$D$内构成解析函数
+    的调和函数$v(x,y)$称为$u(x,y)$的共轭调和函数
+\end{definition}
+这个定义等价于: 在$D$内满足柯西-黎曼方程$u_x=v_y,\,v_x=-u_y$的两个调和函数中, 
+$v$称为$u$的共轭调和函数.
+
+因此, 上面的定义说明了, 区域$D$内的解析函数的虚部是实部的共轭调和函数.
 \end{document}

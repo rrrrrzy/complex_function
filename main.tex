@@ -3,6 +3,7 @@
 \usepackage{circuitikz}         %一个很好的电路绘制包体
 \ctikzset{logic ports=ieee}     %所有逻辑门使用IEEE标准
 \usetikzlibrary{calc}  
+\usepackage{bm}
 
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -359,7 +360,7 @@ f(z_0) &= \frac{1}{2\pi i}\int_{0}^{2\pi}\frac{f(z_0+Re^{i\theta})}{Re^{i\theta}
     如果二元实变函数$\varphi(x,y)$在区域$D$内有二阶连续偏导数, 并且满足
     拉普拉斯(Laplace)方程
     \[
-    \frac{\partial^2\varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y}=0
+    \frac{\partial^2\varphi}{\partial x^2}+\frac{\partial^2\varphi}{\partial y^2}=0
     \]
     则称$\varphi(x,y)$是区域$D$内的调和函数
 \end{definition}

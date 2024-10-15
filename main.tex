@@ -376,4 +376,64 @@ f(z_0) &= \frac{1}{2\pi i}\int_{0}^{2\pi}\frac{f(z_0+Re^{i\theta})}{Re^{i\theta}
 $v$称为$u$的共轭调和函数.
 
 因此, 上面的定义说明了, 区域$D$内的解析函数的虚部是实部的共轭调和函数.
+
+...(待补充: 用偏积分法求已知实部的复变函数)
+
+\section{级数}
+\subsection{复数项级数}
+\begin{definition}[复数列的极限]
+    设$\left\{ \alpha_n \right\}$为一复数列, 其中$\alpha_n=a_n+ib_n$, 又设
+    $\alpha=a+bi$是一个确定的复数, 如果给定任意的$\epsilon>0$, 相应的能找到一个
+    正数$N(\epsilon)$, 使得$\left\lvert \alpha_n -\alpha \right\rvert < \epsilon$
+    在$n>N$时成立, 那么$\alpha$称作复数列$\left\{ \alpha_n \right\}$当
+    $n\to\infty $时的极限, 记作
+    \[
+        \lim_{n\to\infty}\alpha_n=\alpha
+    \]
+\end{definition}
+\noindent 仿照复变函数极限的求法, 我们立即得到求得复数列收敛的充要条件
+\begin{theorem}
+    复数列$\left\{\alpha_n\right\}(n=1,2,...)$收敛于$\alpha$的充要条件是
+    \[
+    \lim_{n\to\infty}a_n=a,\,\lim_{n\to\infty}b_n=b.
+    \]
+\end{theorem}
+在复数域内, 级数的定义和实数域也很相似
+\begin{definition}[复数域的级数]
+    设$\left\{\alpha_n\right\}=\left\{a_n+b_n\right\}$为一复数列, 表达式
+    \[
+    \sum_{n=1}^{\infty}\alpha_n=\alpha_1+\aleph_2+\dots+\alpha_n+\dots
+    \]
+    称作无穷级数, 其最前面$n$项的和$s_n=\displaystyle\alpha_a+\alpha_2+\dots+\alpha_n$
+    称为级数的部分和, 如果部分和数列$\left\{s_n\right\}$收敛, 那么其对应的级数
+    收敛, 并且极限$\displaystyle\lim_{n\to\infty}s_n=s$称为级数的和, 如果部分和数列不收敛,
+    那么级数发散
+\end{definition}
+\begin{theorem}
+    级数$\displaystyle\sum_{n=1}^{\infty}\alpha_n$收敛的充要条件是级数
+    $\displaystyle\sum_{n=1}^{\infty}a_n,\, \sum_{n=1}^{\infty}b_n$都收敛
+\end{theorem}
+定理4.2将复数项级数的审敛问题转化为实数项级数的审敛问题, 由实数项级数
+$\displaystyle\sum_{n=1}^{\infty}a_n,\, \sum_{n=1}^{\infty}b_n$收敛的必要条件
+\[
+\displaystyle\lim_{n\to\infty}a_n=0,\,\displaystyle\lim_{n\to\infty}b_n=0
+\]
+立即可以得到$\displaystyle\lim_{n\to\infty}\alpha_n=0$, 从而得到复数项级数
+$\displaystyle\sum_{n=1}^{\infty}\alpha_n$收敛的必要条件是$\displaystyle\lim_{n\to\infty}\alpha_n=0$
+\begin{theorem}
+    如果$\displaystyle\sum_{n=1}^{\infty}\left\lvert \alpha_n\right\rvert $收敛, 那么
+    $\displaystyle\sum_{n=1}^{\infty}\alpha_n$也收敛, 且不等式
+    $\displaystyle\left\lvert \sum_{n=1}^{\infty}\alpha_n\right\rvert \leq\displaystyle\sum_{n=1}^{\infty}\left\lvert \alpha_n\right\rvert$
+    成立
+\end{theorem}
+如果$\displaystyle\sum_{n=1}^{\infty}\left\lvert \alpha_n\right\rvert $收敛, 那么称级数
+$\displaystyle\sum_{n=1}^{\infty}\alpha_n$为绝对收敛, 非绝对收敛的收敛级数称作条件收敛级数, 
+$\displaystyle\sum_{n=1}^{\infty}\alpha_n$绝对收敛的充要条件是级数
+$\displaystyle\sum_{n=1}^{\infty}a_n,\, \displaystyle\sum_{n=1}^{\infty}b_n$绝对收敛
+\subsection{幂级数}
+\begin{definition}[幂级数的定义]
+    
+\end{definition}
+
+
 \end{document}

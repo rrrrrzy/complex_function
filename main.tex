@@ -432,7 +432,26 @@ $\displaystyle\sum_{n=1}^{\infty}\alpha_n$绝对收敛的充要条件是级数
 $\displaystyle\sum_{n=1}^{\infty}a_n,\, \displaystyle\sum_{n=1}^{\infty}b_n$绝对收敛
 \subsection{幂级数}
 \begin{definition}[幂级数的定义]
-    
+    得到的
+\end{definition}
+
+\section{留数}
+\subsection{孤立奇点}
+如果函数$f(z)$在$z_0$不解析, 但在它的某一个去心邻域内处处解析, 那么$z_0$称为$f(z)$的孤立奇点. 只有当
+奇点有无数多个时,才有可能出现非孤立奇点.
+\begin{definition}[孤立奇点的分类]
+    .\\1. 可去奇点 \space 如果在洛朗级数中不含$z-z_0$的负幂项, 那么孤立奇点称作可去奇点. \\
+    2. 极点 \space 如果有洛朗级数中只含有有限多个$z-z_0$的负幂项, 且其中关于$(z-z_0)^{-1}$的最高
+    幂为$(z-z_0)^{-m}$, 那么孤立奇点称为函数的$m$级极点. 此时, 函数可以表示成
+    \[
+    f(z)=\frac{1}{(z-z_0)^m}g(z)
+    \] \\
+    3. 本性奇点 \space 如果在洛朗级数中含有无穷多个$z-z_0$的负幂项, 那么孤立奇点称为函数的本性奇点. 
+    如果$z_0$为函数的本性奇点, 那么对于给定的任意复数$A$, 总可以找到一个趋向于$z_0$的数列, 当$z$沿
+    这个数列趋向于$z_0$时, 函数的值趋向于$A$.\\
+    综上所述, 如果孤立奇点$z_0$是函数$f(z)$的可去奇点, 那么$\displaystyle\lim_{z\to z_0}f(z)$存在
+    且有限;如果是极点, 那么$\displaystyle\lim_{z\to z_0}f(z)=\infty $;如果是本性奇点, 那么
+    $\displaystyle\lim_{z\to z_0}f(z)$不存在且不为$\infty$.
 \end{definition}
 
 
